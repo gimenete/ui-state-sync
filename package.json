@@ -1,0 +1,33 @@
+{
+  "name": "myreact",
+  "version": "0.1.0",
+  "description": "DIY modern JavaScript framework based on Virtual DOM",
+  "main": "index.js",
+  "scripts": {
+    "watch": "watchify src/index.js -o lib/bundle.js -t babelify -v",
+    "build": "browserify src/index.js -o lib/bundle.js -t babelify"
+  },
+  "keywords": [],
+  "author": "Alberto Gimeno <gimenete@gimenete.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^16.1.1",
+    "watchify": "^3.11.0"
+  },
+  "babel": {
+    "plugins": [
+      [
+        "transform-react-jsx",
+        {
+          "pragma": "h"
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "virtual-dom": "^2.1.1"
+  }
+}
